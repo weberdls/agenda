@@ -19,12 +19,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 import br.com.caelum.cadastro.adapter.ListaAlunosAdapter;
 import br.com.caelum.cadastro.dao.AlunoDAO;
 import br.com.caelum.cadastro.modelo.Aluno;
-import br.com.caelum.cadastro.util.AlunoConverter;
-import br.com.caelum.cadastro.util.WebClient;
+import br.com.caelum.cadastro.task.EnviaAlunosTask;
 
 public class ListaAlunos extends Activity {
 
@@ -198,15 +196,7 @@ public class ListaAlunos extends Activity {
 			startActivity(irParaFormulario);
 			break;
 		case R.id.enviar_alunos:
-			String urlServidor = "http://caelum.com.br/mobile";
-			AlunoDAO dao = new AlunoDAO(this);
-			List<Aluno> alunos = dao.getLista();
-			dao.close();
-	
-			String dadosJson = new AlunoConverter().toJSON(alunos);
-			WebClient client = new WebClient(urlServidor);
-			String respostaJson = client.post(dadosJson);
-			Toast.makeText(this, respostaJson, Toast.LENGTH_LONG).show();
+			new EnviaAlunosTask(this).execute();
 			break;
 		default:
 			break;
