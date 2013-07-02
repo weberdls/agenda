@@ -198,6 +198,10 @@ public class ListaAlunos extends Activity {
 		case R.id.enviar_alunos:
 			new EnviaAlunosTask(this).execute();
 			break;
+		case R.id.receber_provas:
+			Intent irParaListagemDeProvas = new Intent(this, Provas.class);
+			startActivity(irParaListagemDeProvas);
+			break;
 		default:
 			break;
 		}

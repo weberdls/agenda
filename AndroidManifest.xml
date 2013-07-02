@@ -27,6 +27,11 @@
         <activity 
         	android:name="br.com.caelum.cadastro.Formulario">
         </activity>
+        
+        <activity 
+        	android:name="br.com.caelum.cadastro.Provas">
+        </activity>
+        
         <activity
             android:name="br.com.caelum.cadastro.ListaAlunos"
             android:label="@string/app_name" >
