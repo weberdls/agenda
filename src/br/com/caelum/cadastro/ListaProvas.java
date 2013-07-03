@@ -7,7 +7,7 @@ import br.com.caelum.cadastro.fragment.DetalhesProvaFragment;
 import br.com.caelum.cadastro.fragment.ListaProvasFragment;
 import br.com.caelum.cadastro.modelo.Prova;
 
-public class Provas extends FragmentActivity {
+public class ListaProvas extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle bundle) {

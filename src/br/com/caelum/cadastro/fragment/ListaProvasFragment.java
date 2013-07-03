@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import br.com.caelum.cadastro.Provas;
+import br.com.caelum.cadastro.ListaProvas;
 import br.com.caelum.cadastro.R;
 import br.com.caelum.cadastro.modelo.Prova;
 
@@ -43,7 +43,7 @@ public class ListaProvasFragment extends Fragment{
 			public void onItemClick(AdapterView<?> adapter, View view, int posicao,
 					long id) {
 				Prova selecionada = (Prova) adapter.getItemAtPosition(posicao);
-				Provas provas = (Provas) getActivity();
+				ListaProvas provas = (ListaProvas) getActivity();
 				provas.selecionaProvas(selecionada);
 			}
 		});
