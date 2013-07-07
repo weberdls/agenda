@@ -70,6 +70,7 @@ public class ListaAlunos extends Activity {
 	public void onCreateContextMenu(ContextMenu menu, View view,
 			ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, view, menuInfo);
+		
 		MenuItem ligar = menu.add("Ligar");
 		ligar.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			@Override
@@ -201,6 +202,10 @@ public class ListaAlunos extends Activity {
 		case R.id.receber_provas:
 			Intent irParaListagemDeProvas = new Intent(this, ListaProvas.class);
 			startActivity(irParaListagemDeProvas);
+			break;
+		case R.id.mapa:
+			Intent irParaMapa = new Intent(this, MostraAlunosProximos.class);
+			startActivity(irParaMapa);
 			break;
 		default:
 			break;
